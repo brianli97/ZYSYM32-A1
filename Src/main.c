@@ -90,6 +90,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_3);
   HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_4);
+  keyscan();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -99,23 +100,25 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
-	HAL_Delay(500);
-	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
-	HAL_Delay(500);
+//	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
+//	HAL_Delay(500);
+//	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
+//	HAL_Delay(500);
+//
+	SearchRun();
 
-	keyscan();
-	ZYSTM32_back(70,1000);//后�??1s
-	ZYSTM32_brake(500);		//停止0.5s
-	ZYSTM32_run(70,3000);//前进3s
-	ZYSTM32_brake(500);		//停止0.5s
 
-	ZYSTM32_Left(70,1000);//左转1S
-	ZYSTM32_Right(70,1000);//右转1S
-
-	ZYSTM32_Spin_Right(70,1000);//向右旋转2S
-	ZYSTM32_Spin_Left(70,1000);//向左旋转2S
-	ZYSTM32_brake(500);//停止0.5S
+//	ZYSTM32_back(70,1000);//后�??1s
+//	ZYSTM32_brake(500);		//停止0.5s
+//	ZYSTM32_run(70,3000);//前进3s
+//	ZYSTM32_brake(500);		//停止0.5s
+//
+//	ZYSTM32_Left(70,1000);//左转1S
+//	ZYSTM32_Right(70,1000);//右转1S
+//
+//	ZYSTM32_Spin_Right(70,1000);//向右旋转2S
+//	ZYSTM32_Spin_Left(70,1000);//向左旋转2S
+//	ZYSTM32_brake(500);//停止0.5S
   }
   /* USER CODE END 3 */
 }

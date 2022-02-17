@@ -66,6 +66,10 @@ void Error_Handler(void);
 #define RIGHT_MOTOR_GO_GPIO_Port GPIOA
 #define LED1_Pin GPIO_PIN_5
 #define LED1_GPIO_Port GPIOA
+#define SEARCH_R_Pin GPIO_PIN_7
+#define SEARCH_R_GPIO_Port GPIOA
+#define SEARCH_L_Pin GPIO_PIN_0
+#define SEARCH_L_GPIO_Port GPIOB
 #define LEFT_MOTOR_GO_Pin GPIO_PIN_7
 #define LEFT_MOTOR_GO_GPIO_Port GPIOB
 #define LEFT_MOTOR_PWM_Pin GPIO_PIN_8

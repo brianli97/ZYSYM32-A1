@@ -10,10 +10,6 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include mycode/subdir.mk
--include Drivers/STM32F1xx_HAL_Driver/subdir.mk
--include Drivers/CMSIS/subdir.mk
--include Application/User/subdir.mk
--include Application/Startup/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -66,8 +62,8 @@ all: main-build
 main-build: ZYSTM32-A1.elf secondary-outputs
 
 # Tool invocations
-ZYSTM32-A1.elf: $(OBJS) $(USER_OBJS) D:\Gitkraken\study\ZYSYM32-A1\STM32CubeIDE\STM32F103RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "ZYSTM32-A1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\Gitkraken\study\ZYSYM32-A1\STM32CubeIDE\STM32F103RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ZYSTM32-A1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+ZYSTM32-A1.elf: $(OBJS) $(USER_OBJS) D:\project\ZYSYM32-A1\STM32CubeIDE\STM32F103RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "ZYSTM32-A1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\project\ZYSYM32-A1\STM32CubeIDE\STM32F103RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ZYSTM32-A1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
