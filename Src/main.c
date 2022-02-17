@@ -104,7 +104,8 @@ int main(void)
 	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
 	HAL_Delay(500);
 
-	ZYSTM32_back(70,1000);//后退1s
+	keyscan();
+	ZYSTM32_back(70,1000);//后�??1s
 	ZYSTM32_brake(500);		//停止0.5s
 	ZYSTM32_run(70,3000);//前进3s
 	ZYSTM32_brake(500);		//停止0.5s
