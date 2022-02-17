@@ -1,0 +1,8 @@
+motor.c:8:6:SetMotorSpeed	32	static
+motor.c:36:6:ZYSTM32_run	24	static
+motor.c:44:6:ZYSTM32_brake	16	static
+motor.c:53:6:ZYSTM32_Left	16	static
+motor.c:60:6:ZYSTM32_Spin_Left	24	static
+motor.c:68:6:ZYSTM32_Right	24	static
+motor.c:76:6:ZYSTM32_Spin_Right	24	static
+motor.c:85:6:ZYSTM32_back	24	static

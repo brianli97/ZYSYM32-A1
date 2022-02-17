@@ -1,5 +1,5 @@
 Drivers/CMSIS/system_stm32f1xx.o: \
- D:/WorkCode/STM32_Project/ZYSTM32-A1/Src/system_stm32f1xx.c \
+ D:/Gitkraken/study/ZYSYM32-A1/Src/system_stm32f1xx.c \
  ../../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h \
  ../../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h \
  ../../Drivers/CMSIS/Include/core_cm3.h \
@@ -21,7 +21,9 @@ Drivers/CMSIS/system_stm32f1xx.o: \
  ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h \
  ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
  ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
- ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+ ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
+ ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
+ ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 
 ../../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h:
 
@@ -66,3 +68,7 @@ Drivers/CMSIS/system_stm32f1xx.o: \
 ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
 
 ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
+
+../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
+
+../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:

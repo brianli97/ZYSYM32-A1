@@ -7,8 +7,8 @@ HeaderPath=Drivers\STM32F1xx_HAL_Driver\Inc;Drivers\STM32F1xx_HAL_Driver\Inc\Leg
 CDefines=USE_HAL_DRIVER;STM32F103xE;USE_HAL_DRIVER;USE_HAL_DRIVER;
 
 [PreviousGenFiles]
-HeaderPath=D:/WorkCode/STM32_Project/ZYSTM32-A1/Inc
+HeaderPath=D:/Gitkraken/study/ZYSYM32-A1/Inc
 HeaderFiles=gpio.h;tim.h;stm32f1xx_it.h;stm32f1xx_hal_conf.h;main.h;
-SourcePath=D:/WorkCode/STM32_Project/ZYSTM32-A1/Src
+SourcePath=D:/Gitkraken/study/ZYSYM32-A1/Src
 SourceFiles=gpio.c;tim.c;stm32f1xx_it.c;stm32f1xx_hal_msp.c;main.c;
 

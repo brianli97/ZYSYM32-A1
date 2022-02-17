@@ -25,4 +25,5 @@ Application/Startup \
 Application/User \
 Drivers/CMSIS \
 Drivers/STM32F1xx_HAL_Driver \
+mycode \
 

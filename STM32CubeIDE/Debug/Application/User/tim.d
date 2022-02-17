@@ -1,5 +1,5 @@
-Application/User/stm32f1xx_hal_msp.o: \
- D:/Gitkraken/study/ZYSYM32-A1/Src/stm32f1xx_hal_msp.c ../../Inc/main.h \
+Application/User/tim.o: D:/Gitkraken/study/ZYSYM32-A1/Src/tim.c \
+ ../../Inc/tim.h ../../Inc/main.h \
  ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../../Inc/stm32f1xx_hal_conf.h \
  ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -24,6 +24,8 @@ Application/User/stm32f1xx_hal_msp.o: \
  ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+
+../../Inc/tim.h:
 
 ../../Inc/main.h:
 
