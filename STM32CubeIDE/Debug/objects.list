@@ -1,4 +1,5 @@
 "mycode/IRAvoid.o"
 "mycode/IRSEARCH.o"
+"mycode/UltrasonicWave.o"
 "mycode/keyscan.o"
 "mycode/motor.o"

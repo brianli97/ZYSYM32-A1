@@ -87,6 +87,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM4_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_3);
   HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_4);
@@ -117,9 +118,23 @@ int main(void)
 //	ZYSTM32_brake(500);//停止0.5S
 
 //	SearchRun();	//循迹函数
-	AVoidRun();		//避障函数
+//	AVoidRun();		//避障函数
 
+	//printf("测到的距离值为： %d\n",UltrasonicWave_StartMeasure());
+	if(UltrasonicWave_StartMeasure() < 40)
+	{
+		ZYSTM32_brake(500);
+		ZYSTM32_back(70,1000);
+		ZYSTM32_brake(500);
+		ZYSTM32_Right(70,500);
 
+		BEEP_SET;
+	}
+	else
+	{
+        ZYSTM32_run(70,1);
+        BEEP_RESET;
+	}
   }
   /* USER CODE END 3 */
 }
@@ -163,7 +178,29 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void delay_us(uint32_t udelay)
+{
+	uint32_t startval,tickn,delays,wait;
 
+	startval = SysTick->VAL;
+	tickn = HAL_GetTick();
+	//sysc = 72000;	//SystemCoreClock /(1000U / uwTickFreq);
+	delays = udelay * 72;//sysc / 1000 * udelay;
+	if(delays > startval)
+	{
+		while(HAL_GetTick() == tickn)
+		{}
+		wait = 72000 + startval - delays;
+		while(wait < SysTick->VAL)
+		{}
+	}
+	else
+	{
+		wait = startval - delays;
+		while(wait < SysTick->VAL && HAL_GetTick() == tickn)
+		{}
+	}
+}
 /* USER CODE END 4 */
 
 /**
