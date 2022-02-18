@@ -1,7 +1,6 @@
 #ifndef __MOTOR_H_
 #define __MOTOR_H_
 
-#include "stm32f1xx_hal.h"
 #include "main.h"
 
 void SetMotorSpeed(unsigned char ucChannel,signed char cSpeed);

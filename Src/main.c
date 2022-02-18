@@ -104,10 +104,6 @@ int main(void)
 //	HAL_Delay(500);
 //	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
 //	HAL_Delay(500);
-//
-	SearchRun();
-
-
 //	ZYSTM32_back(70,1000);//后�??1s
 //	ZYSTM32_brake(500);		//停止0.5s
 //	ZYSTM32_run(70,3000);//前进3s
@@ -119,6 +115,11 @@ int main(void)
 //	ZYSTM32_Spin_Right(70,1000);//向右旋转2S
 //	ZYSTM32_Spin_Left(70,1000);//向左旋转2S
 //	ZYSTM32_brake(500);//停止0.5S
+
+//	SearchRun();	//循迹函数
+	AVoidRun();		//避障函数
+
+
   }
   /* USER CODE END 3 */
 }

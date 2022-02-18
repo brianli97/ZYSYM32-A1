@@ -1,7 +1,7 @@
 #ifndef __IRSEARCH_H_
 #define __IRSEARCH_H_
 
-#include "stm32f1xx_hal.h"
+#include "main.h"
 
 void SearchRun(void);
 
