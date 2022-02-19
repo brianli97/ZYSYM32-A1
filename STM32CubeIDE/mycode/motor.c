@@ -18,17 +18,19 @@ void SetMotorSpeed(unsigned char ucChannel,signed char cSpeed)
 		case 0://右轮
 			__HAL_TIM_SetCompare(&htim4,TIM_CHANNEL_3,sPWM);
 			if(cSpeed>0)
-				RIGHT_MOTOR_GO_RESET;
+				RIGHT_MOTOR_GO_RESET; //go
 			else if(cSpeed<0)
-				RIGHT_MOTOR_GO_SET;
+				RIGHT_MOTOR_GO_SET;	  //back
 			break;
 		case 1://左轮
 			__HAL_TIM_SetCompare(&htim4,TIM_CHANNEL_4,sPWM);
 			if (cSpeed>0)
-				LEFT_MOTOR_GO_SET;
+				LEFT_MOTOR_GO_SET;  //back
 			else if (cSpeed<0)
-				LEFT_MOTOR_GO_RESET;
+				LEFT_MOTOR_GO_RESET;  //go
 			break;
+
+
 	}
 }
 
@@ -67,7 +69,7 @@ void ZYSTM32_Spin_Left(signed char speed,int time)	//左旋转函数
 
 void ZYSTM32_Right(signed char speed,int time)	//右转函数
 {
-	signed char f_speed = 100 - speed;
+	signed char f_speed = - speed;
 	SetMotorSpeed(1,f_speed); 	// 左轮		//左轮负
 	SetMotorSpeed(0,0);			//右轮为0
 	HAL_Delay(time);			//时间为毫秒

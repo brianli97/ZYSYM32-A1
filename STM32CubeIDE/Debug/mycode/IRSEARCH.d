@@ -1,5 +1,6 @@
-Application/User/main.o: D:/Gitkraken/study/ZYSYM32-A1/Src/main.c \
- ../../Inc/main.h ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
+mycode/IRSEARCH.o: ../mycode/IRSEARCH.c \
+ ../../STM32CubeIDE/mycode/include/IRSEARCH.h ../../Inc/main.h \
+ ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../../Inc/stm32f1xx_hal_conf.h \
  ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
  ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
@@ -23,8 +24,9 @@ Application/User/main.o: D:/Gitkraken/study/ZYSYM32-A1/Src/main.c \
  ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- ../../Inc/tim.h ../../Inc/main.h ../../Inc/gpio.h \
- ../../STM32CubeIDE/mycode/include/keyscan.h
+ ../../STM32CubeIDE/mycode/include/motor.h
+
+../../STM32CubeIDE/mycode/include/IRSEARCH.h:
 
 ../../Inc/main.h:
 
@@ -76,10 +78,4 @@ Application/User/main.o: D:/Gitkraken/study/ZYSYM32-A1/Src/main.c \
 
 ../../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 
-../../Inc/tim.h:
-
-../../Inc/main.h:
-
-../../Inc/gpio.h:
-
-../../STM32CubeIDE/mycode/include/keyscan.h:
+../../STM32CubeIDE/mycode/include/motor.h:

@@ -24,7 +24,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "keyscan.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -87,6 +87,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM4_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_3);
   HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_4);
@@ -94,28 +95,46 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  keyscan();
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
-	HAL_Delay(500);
-	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
-	HAL_Delay(500);
+//	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
+//	HAL_Delay(500);
+//	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
+//	HAL_Delay(500);
+//	ZYSTM32_back(70,1000);		//后退1s
+//	ZYSTM32_brake(500);		//停止0.5s
+//	ZYSTM32_run(70,3000);//前进3s
+//	ZYSTM32_brake(500);		//停止0.5s
+//
+//	ZYSTM32_Left(70,1000);//左转1S
+//	ZYSTM32_Right(70,1000);//右转1S
+//
+//	ZYSTM32_Spin_Right(70,1000);//向右旋转2S
+//	ZYSTM32_Spin_Left(70,1000);//向左旋转2S
+//	ZYSTM32_brake(500);//停止0.5S
 
-	keyscan();
-	ZYSTM32_back(70,1000);//后�??1s
-	ZYSTM32_brake(500);		//停止0.5s
-	ZYSTM32_run(70,3000);//前进3s
-	ZYSTM32_brake(500);		//停止0.5s
+//	SearchRun();	//循迹函数
+//	AVoidRun();		//避障函数
 
-	ZYSTM32_Left(70,1000);//左转1S
-	ZYSTM32_Right(70,1000);//右转1S
+	//printf("测到的距离值为： %d\n",UltrasonicWave_StartMeasure());
+	if(UltrasonicWave_StartMeasure() < 40)
+	{
+		ZYSTM32_brake(500);
+		ZYSTM32_back(70,1000);
+		ZYSTM32_brake(500);
+		ZYSTM32_Right(70,500);
 
-	ZYSTM32_Spin_Right(70,1000);//向右旋转2S
-	ZYSTM32_Spin_Left(70,1000);//向左旋转2S
-	ZYSTM32_brake(500);//停止0.5S
+		BEEP_SET;
+	}
+	else
+	{
+		  ZYSTM32_run(70,1);
+		  BEEP_RESET;
+	}
   }
   /* USER CODE END 3 */
 }
@@ -159,7 +178,33 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void delay_us(uint32_t nus)
+{
+	uint32_t temp;
+	SysTick->LOAD = 9 * nus;	//systick 8分频       72MHz/8 = 9MHz
+	SysTick->VAL = 0x00;	//清空计数器
+	SysTick->CTRL = 0X01;		//使能，减到零是无动作，采用外部时钟源
+	do
+	{
+		temp = SysTick->CTRL;	//读取当前倒计数值
+	}while((temp&0x01)&&(!(temp&(1<<16))));//等待时间到达   SysTick->CTRL 的 0位位使能位，16位为count flag  使能位为0，count flag位为1则退出循环
+	SysTick->CTRL = 0X00;	//关闭计数器
+	SysTick->VAL = 0x00;	//清空计数器
+}
 
+void delay_ms(uint32_t nms)
+{
+	uint32_t temp;
+	SysTick->LOAD = 9000 * nms;	//systick 8分频       72MHz/8 = 9MHz
+	SysTick->VAL = 0x00;	//清空计数器
+	SysTick->CTRL = 0X01;		//使能，减到零是无动作，采用外部时钟源
+	do
+	{
+		temp = SysTick->CTRL;	//读取当前倒计数值
+	}while((temp&0x01)&&(!(temp&(1<<16))));//等待时间到达   SysTick->CTRL 的 0位位使能位，16位为count flag  使能位为0，count flag位为1则退出循环
+	SysTick->CTRL = 0X00;	//关闭计数器
+	SysTick->VAL = 0x00;	//清空计数器
+}
 /* USER CODE END 4 */
 
 /**

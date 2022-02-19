@@ -58,6 +58,11 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define TRIG_Pin GPIO_PIN_0
+#define TRIG_GPIO_Port GPIOC
+#define Echo_Pin GPIO_PIN_1
+#define Echo_GPIO_Port GPIOC
+#define Echo_EXTI_IRQn EXTI1_IRQn
 #define KEY_Pin GPIO_PIN_2
 #define KEY_GPIO_Port GPIOC
 #define BEEP_Pin GPIO_PIN_3
@@ -66,6 +71,18 @@ void Error_Handler(void);
 #define RIGHT_MOTOR_GO_GPIO_Port GPIOA
 #define LED1_Pin GPIO_PIN_5
 #define LED1_GPIO_Port GPIOA
+#define LED_D4_Pin GPIO_PIN_6
+#define LED_D4_GPIO_Port GPIOA
+#define SEARCH_R_Pin GPIO_PIN_7
+#define SEARCH_R_GPIO_Port GPIOA
+#define SEARCH_L_Pin GPIO_PIN_0
+#define SEARCH_L_GPIO_Port GPIOB
+#define AVOID_RIGHT_Pin GPIO_PIN_1
+#define AVOID_RIGHT_GPIO_Port GPIOB
+#define AVOID_LFET_Pin GPIO_PIN_8
+#define AVOID_LFET_GPIO_Port GPIOA
+#define LED_D3_Pin GPIO_PIN_6
+#define LED_D3_GPIO_Port GPIOB
 #define LEFT_MOTOR_GO_Pin GPIO_PIN_7
 #define LEFT_MOTOR_GO_GPIO_Port GPIOB
 #define LEFT_MOTOR_PWM_Pin GPIO_PIN_8

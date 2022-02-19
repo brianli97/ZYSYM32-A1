@@ -147,9 +147,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="mycode" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-                        						
-                        <entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="mycode"/>
+                        <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
